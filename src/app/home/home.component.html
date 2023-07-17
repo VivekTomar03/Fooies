@@ -1,0 +1,41 @@
+<section class="banner-section">
+  <div class="banner-image">
+    <img src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png" alt="Banner" />
+    <h2>Welcome to Foodies Zone</h2>
+  </div>
+  <button class="chatbot-button" (click)="toggleChatbot()">Bot</button>
+  <div class="chatbot-widget" *ngIf="showChatbot">
+    <div class="chat-container">
+      <div class="message" *ngFor="let message of chatMessages">
+        <div class="message-content" [ngClass]="{'user-message': message.isUserMessage, 'bot-message': !message.isUserMessage}">
+          <div class="message-text">{{ message.text }}</div>
+          <div class="message-time">{{ message.time | date: 'hh:mm a' }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <input type="text" [(ngModel)]="userMessage" placeholder="Type your message" (keydown.enter)="sendMessage()" />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+  
+</section>
+<section class="food-section">
+  <div class="food-container">
+    <div class="food-item">
+      <img src="https://i.pinimg.com/474x/da/19/8a/da198a139ac249f5ca728bd5c3cb4244.jpg" alt="Food Image" />
+    </div>
+    <div class="food-item">
+      <img src="https://i.pinimg.com/474x/02/c5/1a/02c51af7eb8c4c24d2ba33ddc9dc4c2c.jpg" alt="Food Image" />
+    </div>
+    <div class="food-item">
+      <img src="https://i.pinimg.com/564x/57/2b/32/572b3270213eb2f65cae39340ef6d563.jpg" alt="Food Image" />
+    </div>
+    <div class="food-item">
+      <img src="https://i.pinimg.com/564x/b9/29/db/b929db52ab585a60e5d09e35c16263e2.jpg" alt="Food Image" />
+    </div>
+    <div class="food-item">
+      <img src="https://i.pinimg.com/474x/f4/e3/bb/f4e3bb077e70a561e4c8dc39ece5768c.jpg" alt="Food Image" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+
+<button class="view-cart-button" (click)="openModal()">View Cart</button>
+<button class="view-cart-button" (click)="viewOrders()">View Orders</button>
+
+<div class="modal" *ngIf="showOrdersModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeOrdersModal()">&times;</span>
+    <h2>Orders</h2>
+    <div *ngFor="let order of orders">
+      <hr>
+      <p>Order ID: {{ order.order_id }}</p>
+      <p>Customer Name: {{ order.customer_name }}</p>
+      <p>Dish IDs: {{ order.dish_ids }}</p>
+      <hr>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Cart</h2>
+    <div *ngFor="let item of cartItems">
+       <p>{{item.dish_id}}</p>
+      <p>{{ item.dish_name }} - Price: {{ item.price }}</p>
+    </div>
+    <p class="total-price">Total Price: {{ calculateTotalPrice() }}</p>
+    <button  class="place-order-button" (click)="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+
+
+<div class="menu-grid" *ngIf="menuItems">
+  <div class="menu-item" *ngFor="let item of menuItems">
+    <img [src]="item.image_url" alt="Dish Image" />
+    <h3>Title: {{ item.dish_name.toUpperCase() }}</h3>
+    <p>Price: {{ item.price }}</p>
+    <p>Availability: {{ item.availability ? 'YES' : 'NO' }}</p>
+    <div class="actions">
+      <button class="order-button" (click)="orderNow(item)">Add To Cart</button>
+      <button class="rate-button" (click)="openRatingModal(item)">Rate Dish</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="showRatingModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeRatingModal()">&times;</span>
+    <h2>Rate Dish</h2>
+    <form (submit)="submitFeedback()">
+      <div>
+        <label for="rating">Rating</label>
+        <input type="number" id="rating" name="rating" [(ngModel)]="rating" required min="1" max="5">
+      </div>
+      <div>
+        <label for="review">Review</label>
+        <textarea id="review" name="review" [(ngModel)]="review" required></textarea>
+      </div>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</div>

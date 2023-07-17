@@ -1,0 +1,150 @@
+.banner-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+}
+
+.banner-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-image h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.chatbot-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  background-color: #ff0000;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.food-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.food-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.food-item {
+  width: calc(20% - 1rem);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.food-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chatbot-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  margin-right: 60px;
+}
+
+.chat-container {
+  padding: 10px;
+  background-color: #25D366;
+}
+
+.message {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+}
+
+.user-message {
+  justify-content: flex-end;
+  color: rgb(9, 9, 9);
+  font-weight: bold;
+  background-color: rgb(127, 255, 212);
+}
+
+.bot-message {
+  justify-content: flex-start;
+  color: rgb(9, 9, 9);
+  font-weight: bold;
+  background-color: rgb(127, 255, 212);
+}
+
+.message-content {
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.message-text {
+  margin-bottom: 5px;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #fe440c;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
